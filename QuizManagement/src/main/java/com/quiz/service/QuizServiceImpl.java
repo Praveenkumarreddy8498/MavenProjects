@@ -1,6 +1,5 @@
 package com.quiz.service;
 
-import java.sql.*;
 import java.util.List;
 
 import com.quiz.dao.IQuizDao;
@@ -21,7 +20,7 @@ public class QuizServiceImpl implements IQuizService {
 	@Override
 	public void updateQuestion(int questionId, String answerValue) {
 		int result = quizDao.updateQuestion(questionId, answerValue);
-		if (result==0)
+		if (result == 0)
 			throw new QuestionIdNotFoundException();
 
 	}
@@ -29,9 +28,8 @@ public class QuizServiceImpl implements IQuizService {
 	@Override
 	public void deleteQuestion(int questionId) {
 		int result = quizDao.deleteQuestion(questionId);
-		if (result==0)
+		if (result == 0)
 			throw new QuestionIdNotFoundException();
-		
 
 	}
 
@@ -46,7 +44,5 @@ public class QuizServiceImpl implements IQuizService {
 
 		return quizDao.findByTopic(topic);
 	}
-
-	
 
 }
