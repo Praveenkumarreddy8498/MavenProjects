@@ -6,9 +6,18 @@ import java.util.Scanner;
 import com.quiz.model.Question;
 import com.quiz.model.Result;
 
+/**
+ * @author PraveenKumarReddy
+ *
+ */
 public class ResultDaoImpl implements IResultDao {
 	IQuizDao quizDao = new QuizDaoImpl();
-
+	
+	/**
+	 * This method does the quiz operation
+	 * @param topic for finding the topic
+	 * @return Result
+	 */
 	@Override
 	public Result findBeginQuiz(String topic) {
 		List<Question> questionList = quizDao.findByTopic(topic);
@@ -47,10 +56,10 @@ public class ResultDaoImpl implements IResultDao {
 			System.out
 					.println("Your answer " + answer + " ,Original Answer is " + question.getAnswer().getAnswerValue());
 			if (answer.equals(question.getAnswer().getAnswerValue())) {
-				System.out.println("It's Correct Answer");
+				System.out.println("\nIt's Correct Answer");
 				countRight++;
 			} else {
-				System.out.println("Sorry It's Wrong Answer");
+				System.out.println("\nSorry It's Wrong Answer");
 				countWrong++;
 			}
 			countTotal++;
@@ -65,12 +74,23 @@ public class ResultDaoImpl implements IResultDao {
 		return result;
 	}
 
+	/**
+	 * This method is used for finding the percentage of the result
+	 * @param correctAnswers
+	 * @param totalQuestions
+	 * @return integer value of percentage
+	 */
 	@Override
 	public int findPercentage(int correctAnswers, int totalQuestions) {
 
 		return (correctAnswers / totalQuestions) * 100;
 	}
 
+	/**
+	 * This method is used for giving the grades based on percentage
+	 * @param percentage
+	 * @return String of grade
+	 */
 	@Override
 	public String findPerformance(int percentage) {
 		String grade = "";

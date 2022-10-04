@@ -7,7 +7,12 @@ import com.quiz.model.*;
 import com.quiz.util.*;
 
 public class QuizDaoImpl implements IQuizDao {
-
+	/*
+	 * This method adds the question into database
+	 * 
+	 * @param question
+	 * 
+	 */
 	@Override
 	public void addQuestion(Question question) {
 		Connection connection = null;
@@ -46,47 +51,48 @@ public class QuizDaoImpl implements IQuizDao {
 		}
 
 	}
+	/*
+	 * This method updates the answer value based on question no in database
+	 * 
+	 * @param questionNo for finding the question
+	 * 
+	 * @param answerValue for setting the answer value
+	 * 
+	 * @return integer value from executeUpdate method
+	 */
 
 	@Override
 	public int updateQuestion(int questionNo, String answerValue) {
-		Connection connection = null;
-		PreparedStatement preparedstatement = null;
+
 		int result = 0;
-		try {
-			DbConnection.openConnection();
-			connection = DbConnection.openConnection();
-			preparedstatement = connection.prepareStatement(Queries.UPDATEANSWERQUERY);
+		try (Connection connection = DbConnection.openConnection();
+				PreparedStatement preparedstatement = connection.prepareStatement(Queries.UPDATEANSWERQUERY);) {
+
 			preparedstatement.setString(1, answerValue);
 			preparedstatement.setInt(2, questionNo);
 			result = preparedstatement.executeUpdate();
 
 		} catch (SQLException e) {
 			e.printStackTrace();
-		} finally {
-			DbConnection.closeConnection();
-			try {
-				if (preparedstatement != null)
-					preparedstatement.close();
-			} catch (SQLException e) {
-				e.printStackTrace();
-			}
-
 		}
 		return result;
 
 	}
 
+	/**
+	 * This method returns the question based on question id from database
+	 * 
+	 * @param questionId for finding the question
+	 * 
+	 * @return question based on question id
+	 */
 	@Override
 	public Question findById(int questionId) {
-		Connection connection = null;
-		PreparedStatement preparedstatement = null;
+
 		ResultSet resultset = null;
 		Question question = new Question();
-
-		try {
-			DbConnection.openConnection();
-			connection = DbConnection.openConnection();
-			preparedstatement = connection.prepareStatement(Queries.FINDOPTIONSBYQUESTIONID);
+		try (Connection connection = DbConnection.openConnection();
+				PreparedStatement preparedstatement = connection.prepareStatement(Queries.FINDOPTIONSBYQUESTIONID);) {
 			preparedstatement.setInt(1, questionId);
 			resultset = preparedstatement.executeQuery();
 			while (resultset.next()) {
@@ -101,10 +107,8 @@ public class QuizDaoImpl implements IQuizDao {
 		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {
-			DbConnection.closeConnection();
 			try {
-				if (preparedstatement != null)
-					preparedstatement.close();
+
 				if (resultset != null)
 					resultset.close();
 
@@ -118,57 +122,57 @@ public class QuizDaoImpl implements IQuizDao {
 
 	}
 
+	/**
+	 * This method delete the question in database based on question id given
+	 * 
+	 * @param questionId for finding the question
+	 * 
+	 * @return integer value from executeUpdate method
+	 */
 	@Override
 	public int deleteQuestion(int questionId) {
-		Connection connection = null;
-		PreparedStatement preparedstatement = null;
 		int result = 0;
-		try {
-			connection = DbConnection.openConnection();
-			preparedstatement = connection.prepareStatement(Queries.DELETEBYQUESTIONID);
+		try (Connection connection = DbConnection.openConnection();
+				PreparedStatement preparedstatement = connection.prepareStatement(Queries.DELETEBYQUESTIONID);) {
+
 			preparedstatement.setInt(1, questionId);
 			result = preparedstatement.executeUpdate();
 
 		} catch (SQLException e) {
 			e.printStackTrace();
-		} finally {
-			DbConnection.closeConnection();
-			try {
-				if (preparedstatement != null)
-					preparedstatement.close();
-			} catch (SQLException e) {
-				e.printStackTrace();
-			}
 
 		}
 		return result;
 
 	}
 
+	/**
+	 * This method finds the Questions from database based on topic given
+	 * 
+	 * @param topic for finding the topic
+	 * 
+	 * @return list of questions
+	 */
 	@Override
 	public List<Question> findByTopic(String topic) {
 		List<Question> questionList = new ArrayList<>();
 
-		Connection connection = null;
-		PreparedStatement preparedstatement = null;
 		ResultSet resultset = null;
-		try {
-			// DbConnection.openConnection();
-			connection = DbConnection.openConnection();
-			preparedstatement = connection.prepareStatement(Queries.FINDBYTOPICQUERY);
+		try (Connection connection = DbConnection.openConnection();
+				PreparedStatement preparedstatement = connection.prepareStatement(Queries.FINDBYTOPICQUERY);) {
 			preparedstatement.setString(1, topic);
 			resultset = preparedstatement.executeQuery();
 
 			IRowMapper mapper = new QuestionMapper();
-			questionList= mapper.mapRow(resultset);
+			questionList = mapper.mapRow(resultset);
 
 		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {
 			DbConnection.closeConnection();
 			try {
-				if (preparedstatement != null)
-					preparedstatement.close();
+				if (resultset != null)
+					resultset.close();
 			} catch (SQLException e) {
 				e.printStackTrace();
 			}

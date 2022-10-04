@@ -7,8 +7,19 @@ import java.sql.ResultSet;
 import com.quiz.model.Answer;
 import com.quiz.model.Question;
 
+/**
+ * @author PraveenKumarReddy
+ *
+ */
 public class QuestionMapper implements IRowMapper {
 
+	/**
+	 * This method maps the rows of result set
+	 * 
+	 * @param resultset
+	 * @return list of questions
+	 * @throws SQLException
+	 */
 	@Override
 	public List<Question> mapRow(ResultSet resultset) throws SQLException {
 		List<Question> questionList = new ArrayList<>();

@@ -5,8 +5,18 @@ import java.sql.*;
 import com.quiz.model.User;
 import com.quiz.util.*;
 
+/**
+ * @author PraveenKumarReddy
+ *
+ */
 public class UserDaoImpl implements IUserDao {
 
+	/**
+	 * This Method is used to add the user to Database
+	 * 
+	 * @param user
+	 * @return String of Auto Generated Password
+	 */
 	@Override
 	public String addUser(User user) {
 
@@ -29,11 +39,19 @@ public class UserDaoImpl implements IUserDao {
 		return user.getPassword();
 	}
 
+	/**
+	 * This method is used to find the User in Database
+	 * 
+	 * @param userName
+	 * @param password
+	 * @param role
+	 * @return User from Database
+	 */
 	@Override
 	public User findByUserName(String userName, String password, String role) {
 
 		ResultSet resultset = null;
-		User user = new User();
+		User user = null;
 		try (Connection connection = DbConnection.openConnection();
 				PreparedStatement preparedstatement = connection.prepareStatement(Queries.FINDBYUSERNAME);) {
 
@@ -43,6 +61,7 @@ public class UserDaoImpl implements IUserDao {
 
 			resultset = preparedstatement.executeQuery();
 			while (resultset.next()) {
+				user = new User();
 				user.setUserName(resultset.getString(1));
 				user.setPassword(resultset.getString(7));
 			}
@@ -62,6 +81,14 @@ public class UserDaoImpl implements IUserDao {
 		return user;
 	}
 
+	/**
+	 * This Method is Used to Change the password based on parameters
+	 * 
+	 * @param userName
+	 * @param password
+	 * @param role
+	 * @return integer from executeUpdate
+	 */
 	@Override
 	public int changePassword(String userName, String password, String role) {
 

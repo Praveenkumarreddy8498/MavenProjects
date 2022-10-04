@@ -1,5 +1,4 @@
-package com.doctorapp.service;
-
+package com.doctorapp.service; 
 import java.time.LocalDateTime;
 import java.util.*;
 import java.util.stream.Collectors;
@@ -8,6 +7,10 @@ import com.doctorapp.dao.*;
 import com.doctorapp.exception.*;
 import com.doctorapp.model.Doctor;
 
+/**
+ * @author PraveenKumarReddy
+ *
+ */
 public class DoctorServiceImpl implements IDoctorService {
 	IDoctorDao doctorDao = new DoctorDaoImpl();
 
@@ -17,6 +20,12 @@ public class DoctorServiceImpl implements IDoctorService {
 		doctorDao.addDoctor(doctor);
 	}
 
+	
+	/**
+	 * @param doctorId
+	 * @param fees
+	 * @throws IdNotFoundException
+	 */
 	@Override
 	public void updateDoctor(int doctorId, double fees) throws IdNotFoundException {
 

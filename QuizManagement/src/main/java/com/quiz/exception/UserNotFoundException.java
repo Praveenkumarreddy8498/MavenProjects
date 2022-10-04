@@ -1,5 +1,9 @@
 package com.quiz.exception;
 
+/**
+ * @author PraveenKumarReddy
+ *
+ */
 public class UserNotFoundException extends RuntimeException {
 
 	/**

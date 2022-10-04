@@ -1,5 +1,9 @@
 package com.quiz.model;
 
+/**
+ * @author PraveenKumarReddy
+ *
+ */
 public class User {
 	private String userName;
 	private String name;

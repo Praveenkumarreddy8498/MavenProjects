@@ -6,6 +6,9 @@ import java.sql.SQLException;
 
 public class DbConnection {
 	static Connection connection;
+	/**This Method opens the Connection for connecting to database
+	 * @return connection
+	 */
 	public static Connection openConnection() {
 		String url="jdbc:mysql://localhost:3306/quizdb";
 		String user="root";
@@ -20,6 +23,9 @@ public class DbConnection {
 		return connection;
 		
 	}
+	/**
+	 * This Method closes the Connection for connecting to database
+	 */
 	public static void closeConnection() {
 		if(connection!=null) {
 			try {

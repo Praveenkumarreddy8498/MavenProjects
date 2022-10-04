@@ -3,6 +3,10 @@ package com.quiz.service;
 import com.quiz.exception.UserNotFoundException;
 import com.quiz.model.User;
 
+/**
+ * @author PraveenKumarReddy
+ *
+ */
 public interface IUserService {
 	String register(User user);
 

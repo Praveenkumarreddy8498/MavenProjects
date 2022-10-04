@@ -1,5 +1,9 @@
 package com.quiz.util;
 
+/**
+ * @author PraveenKumarReddy
+ *
+ */
 public class Queries {
 	//for Question and Answers
 	public static final String INSERTQUESTIONQUERY="insert into question(questionId,topic,question,optionOne,optionTwo,optionThree,optionFour,answerId) values(?,?,?,?,?,?,?,?)";

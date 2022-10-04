@@ -1,5 +1,9 @@
 package com.quiz.model;
 
+/**
+ * @author PraveenKumarReddy
+ *
+ */
 public class Result {
 	private int totalQuestions;
 	private int correctAnswers;

@@ -1,5 +1,9 @@
 package com.quiz.model;
 
+/**
+ * @author PraveenKumarReddy
+ *
+ */
 public class Question {
 	private Integer questionId;
 	private String topic; // can be enum as Java,Html, Angular,GK

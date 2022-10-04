@@ -1,5 +1,9 @@
 package com.quiz.model;
 
+/**
+ * @author PraveenKumarReddy
+ *
+ */
 public class Answer {
 	private Integer answerId;
 	private String answerValue;
