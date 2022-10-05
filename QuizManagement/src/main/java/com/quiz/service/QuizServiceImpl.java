@@ -60,7 +60,7 @@ public class QuizServiceImpl implements IQuizService {
 	 * This Method pass the values to dao object, will get the return value
 	 * 
 	 * @param questionId for passing question id
-	 * @return <Question> question
+	 * @return question
 	 */
 	@Override
 	public Question getOptionsById(int questionId) {

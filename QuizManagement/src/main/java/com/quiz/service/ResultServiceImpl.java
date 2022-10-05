@@ -15,7 +15,7 @@ public class ResultServiceImpl implements IResultService {
 	 * This Method pass the values to dao object, will get the return value
 	 * 
 	 * @param topic for passing topic
-	 * @return <Result> for result
+	 * @return result
 	 */
 	@Override
 	public Result beginQuiz(String topic) {
