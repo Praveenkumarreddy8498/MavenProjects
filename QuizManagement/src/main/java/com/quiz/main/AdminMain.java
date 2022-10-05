@@ -12,7 +12,7 @@ import com.quiz.service.*;
 public class AdminMain {
 
 	/**This is main method for the Admin 
-	 * @param args
+	 * @param args for passing arguments
 	 */
 	public static void main(String[] args) {
 

@@ -16,9 +16,9 @@ public class QuestionMapper implements IRowMapper {
 	/**
 	 * This method maps the rows of result set
 	 * 
-	 * @param resultset
+	 * @param resultset for passing resultset values
 	 * @return list of questions
-	 * @throws SQLException
+	 * @throws SQLException for Exception
 	 */
 	@Override
 	public List<Question> mapRow(ResultSet resultset) throws SQLException {

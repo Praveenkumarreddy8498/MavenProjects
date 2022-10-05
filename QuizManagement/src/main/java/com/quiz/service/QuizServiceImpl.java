@@ -30,8 +30,8 @@ public class QuizServiceImpl implements IQuizService {
 	/**
 	 * This method pass the values to dao object and get the return value
 	 * 
-	 * @param questionId
-	 * @param answerValue
+	 * @param questionId for passing question id
+	 * @param answerValue for passing answer value
 	 * @throws QuestionIdNotFoundException when the question is not found
 	 */
 	@Override
@@ -45,7 +45,7 @@ public class QuizServiceImpl implements IQuizService {
 	/**
 	 * This method pass the values to dao object,will get the return value
 	 * 
-	 * @param questionId
+	 * @param questionId for passing question id
 	 * @throws QuestionIdNotFoundException when the question is not found
 	 */
 	@Override
@@ -59,8 +59,8 @@ public class QuizServiceImpl implements IQuizService {
 	/**
 	 * This Method pass the values to dao object, will get the return value
 	 * 
-	 * @param questionId
-	 * @return question
+	 * @param questionId for passing question id
+	 * @return <Question> question
 	 */
 	@Override
 	public Question getOptionsById(int questionId) {
@@ -71,7 +71,7 @@ public class QuizServiceImpl implements IQuizService {
 	/**
 	 * This Method pass the values to dao object, will get the return value
 	 * 
-	 * @param topic
+	 * @param topic for passing topic
 	 * @return list of questions
 	 */
 	@Override

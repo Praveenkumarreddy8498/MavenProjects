@@ -14,8 +14,8 @@ public class ResultServiceImpl implements IResultService {
 	/**
 	 * This Method pass the values to dao object, will get the return value
 	 * 
-	 * @param topic
-	 * @return result
+	 * @param topic for passing topic
+	 * @return <Result> for result
 	 */
 	@Override
 	public Result beginQuiz(String topic) {
@@ -25,8 +25,8 @@ public class ResultServiceImpl implements IResultService {
 	/**
 	 * This Method pass the values to dao object, will get the return value
 	 * 
-	 * @param correctAnswers
-	 * @param totalQuestions
+	 * @param correctAnswers for passing correct answers
+	 * @param totalQuestions for passing total questions
 	 * @return integer of percentage
 	 */
 	@Override
@@ -37,7 +37,7 @@ public class ResultServiceImpl implements IResultService {
 	/**
 	 * This Method pass the values to dao object, will get the return value
 	 * 
-	 * @param percentage
+	 * @param percentage for passing percentage
 	 * @return String of grade
 	 */
 	@Override

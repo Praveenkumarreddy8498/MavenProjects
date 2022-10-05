@@ -20,7 +20,7 @@ public class UserMain {
 	/**
 	 * This is main method for the User
 	 * 
-	 * @param args
+	 * @param args for passing arguments
 	 */
 	public static void main(String[] args) {
 		IResultService resultService = new ResultServiceImpl();

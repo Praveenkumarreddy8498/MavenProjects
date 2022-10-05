@@ -12,7 +12,7 @@ public class UserServiceImpl implements IUserService {
 	 * This Method pass the values to dao object after generating password, will get
 	 * the return value
 	 * 
-	 * @param user
+	 * @param user for passing user
 	 * @return String auto-generated password
 	 */
 	@Override
@@ -26,10 +26,10 @@ public class UserServiceImpl implements IUserService {
 	/**
 	 * This Method pass the values to dao object, will get the return value
 	 * 
-	 * @param userName
-	 * @param password
-	 * @param role
-	 * @return user
+	 * @param userName for passing user name
+	 * @param password for passing password
+	 * @param role for passing role
+	 * @return user for passing use 
 	 * @throws UserNotFoundException when the user is not found
 	 */
 	@Override
@@ -48,9 +48,9 @@ public class UserServiceImpl implements IUserService {
 
 	/**
 	 * This Method pass the values to dao object, will get the return value
-	 * @param userName
-	 * @param password
-	 * @param role
+	 * @param userName for passing user name
+	 * @param password for passing password
+	 * @param role for passing role
 	 * @throws UserNotFoundException when the user is not found
 	 */
 	@Override

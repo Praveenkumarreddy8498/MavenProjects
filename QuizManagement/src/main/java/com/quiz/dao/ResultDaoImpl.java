@@ -76,8 +76,8 @@ public class ResultDaoImpl implements IResultDao {
 
 	/**
 	 * This method is used for finding the percentage of the result
-	 * @param correctAnswers
-	 * @param totalQuestions
+	 * @param  correctAnswers for passing Correct Answers
+	 * @param totalQuestions for passing Total Questions
 	 * @return integer value of percentage
 	 */
 	@Override
@@ -88,7 +88,7 @@ public class ResultDaoImpl implements IResultDao {
 
 	/**
 	 * This method is used for giving the grades based on percentage
-	 * @param percentage
+	 * @param percentage for passing percentage 
 	 * @return String of grade
 	 */
 	@Override
