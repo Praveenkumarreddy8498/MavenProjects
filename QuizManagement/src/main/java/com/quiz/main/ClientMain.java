@@ -84,7 +84,6 @@ public class ClientMain {
 			System.out.println("enter password");
 			String password = sc.nextLine();
 			userService.login(username, password, role);
-			System.out.println("you have Logged in SuccessFully");
 			break;
 		case 3:
 			System.out.println();

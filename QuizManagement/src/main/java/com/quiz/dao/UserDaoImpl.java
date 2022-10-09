@@ -51,7 +51,6 @@ public class UserDaoImpl implements IUserDao {
 	public User findByUserName(String userName, String password, String role) {
 
 		ResultSet resultset = null;
-		User user = null;
 		try (Connection connection = DbConnection.openConnection();
 				PreparedStatement preparedstatement = connection.prepareStatement(Queries.FINDBYUSERNAME);) {
 
@@ -61,9 +60,11 @@ public class UserDaoImpl implements IUserDao {
 
 			resultset = preparedstatement.executeQuery();
 			while (resultset.next()) {
-				user = new User();
+				User user =new User();
 				user.setUserName(resultset.getString(1));
 				user.setPassword(resultset.getString(7));
+				user.setRole(resultset.getString(8));
+				return user;
 			}
 
 		} catch (SQLException e) {
@@ -78,7 +79,7 @@ public class UserDaoImpl implements IUserDao {
 
 		}
 
-		return user;
+		return null;
 	}
 
 	/**

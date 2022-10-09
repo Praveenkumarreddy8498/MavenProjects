@@ -26,8 +26,8 @@ public class ResultDaoImpl implements IResultDao {
 		int countTotal = 0;
 		int countRight = 0;
 		int countWrong = 0;
+		int num = 1;
 		for (Question question : questionList) {
-			int num = 1;
 			System.out.println("Question " + num + " " + question.getQuestion());
 			System.out.println("1 : " + question.getOptionOne());
 			System.out.println("2 : " + question.getOptionTwo());
@@ -65,8 +65,7 @@ public class ResultDaoImpl implements IResultDao {
 				countWrong++;
 			}
 			countTotal++;
-			num += 1;
-
+			num++;
 		}
 		// Result result = new Result(countTotal, countRight, countWrong);
 		Result result = new Result();

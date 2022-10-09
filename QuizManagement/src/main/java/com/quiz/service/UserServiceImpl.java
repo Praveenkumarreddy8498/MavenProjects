@@ -34,13 +34,11 @@ public class UserServiceImpl implements IUserService {
 	 */
 	@Override
 	public User login(String userName, String password, String role) throws UserNotFoundException {
-		User user = null;
-		user = userDao.findByUserName(userName, password, role);
-		if (user == null)
+		 User user = userDao.findByUserName(userName, password, role);
+		if (user==null)
 			throw new UserNotFoundException("User Not Found");
 
-		if (user.getUserName().equals(userName) && user.getPassword().equals(password) && user.getRole().equals(role))
-
+		if (user.getUserName().equalsIgnoreCase(userName) && user.getPassword().equalsIgnoreCase(password) && user.getRole().equalsIgnoreCase(role))
 			System.out.println("Logged In Successfully");
 		return user;
 
