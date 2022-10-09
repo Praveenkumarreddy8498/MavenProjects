@@ -2,6 +2,10 @@ package com.quiz.util;
 
 import java.util.Random;
 
+/**
+ * @author PraveenKumarReddy
+ *
+ */
 public class Passwordgenerator {
 
 	/**

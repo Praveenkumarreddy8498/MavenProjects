@@ -15,7 +15,7 @@ import com.quiz.service.UserServiceImpl;
  * @author PraveenKumarReddy
  *
  */
-public class UserMain {
+public class ClientMain {
 
 	/**
 	 * This is main method for the User

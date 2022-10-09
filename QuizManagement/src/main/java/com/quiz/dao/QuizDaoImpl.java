@@ -6,6 +6,10 @@ import java.util.*;
 import com.quiz.model.*;
 import com.quiz.util.*;
 
+/**
+ * @author PraveenKumarReddy
+ *
+ */
 public class QuizDaoImpl implements IQuizDao {
 	/*
 	 * This method adds the question into database

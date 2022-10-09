@@ -1,6 +1,8 @@
 package com.quiz.model;
 
 /**
+ * This Class is java bean of Result
+ * 
  * @author PraveenKumarReddy
  *
  */
@@ -8,17 +10,16 @@ public class Result {
 	private int totalQuestions;
 	private int correctAnswers;
 	private int wrongAnswers;
-    
-    
-    public Result() {
+
+	public Result() {
 		super();
 	}
 
 	public Result(int totalQuestions, int correctAnswers, int wrongAnswers) {
-        this.totalQuestions = totalQuestions;
-        this.correctAnswers = correctAnswers;
-        this.wrongAnswers = wrongAnswers;
-    }
+		this.totalQuestions = totalQuestions;
+		this.correctAnswers = correctAnswers;
+		this.wrongAnswers = wrongAnswers;
+	}
 
 	public int getTotalQuestions() {
 		return totalQuestions;
@@ -43,8 +44,5 @@ public class Result {
 	public void setWrongAnswers(int wrongAnswers) {
 		this.wrongAnswers = wrongAnswers;
 	}
-    
-    
-    
 
 }

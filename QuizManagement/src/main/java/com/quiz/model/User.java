@@ -1,6 +1,8 @@
 package com.quiz.model;
 
 /**
+ * This Class is Java Bean of User
+ * 
  * @author PraveenKumarReddy
  *
  */

@@ -28,8 +28,8 @@ public class UserServiceImpl implements IUserService {
 	 * 
 	 * @param userName for passing user name
 	 * @param password for passing password
-	 * @param role for passing role
-	 * @return user for passing use 
+	 * @param role     for passing role
+	 * @return user for passing use
 	 * @throws UserNotFoundException when the user is not found
 	 */
 	@Override
@@ -48,9 +48,10 @@ public class UserServiceImpl implements IUserService {
 
 	/**
 	 * This Method pass the values to dao object, will get the return value
+	 * 
 	 * @param userName for passing user name
 	 * @param password for passing password
-	 * @param role for passing role
+	 * @param role     for passing role
 	 * @throws UserNotFoundException when the user is not found
 	 */
 	@Override

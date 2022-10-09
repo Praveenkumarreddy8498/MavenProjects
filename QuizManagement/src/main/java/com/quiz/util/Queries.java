@@ -1,6 +1,7 @@
 package com.quiz.util;
 
 /**
+ * This Class contains All the Queries Used for Data Base Connection
  * @author PraveenKumarReddy
  *
  */

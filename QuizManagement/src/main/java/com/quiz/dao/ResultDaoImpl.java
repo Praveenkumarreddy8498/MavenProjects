@@ -1,6 +1,7 @@
 package com.quiz.dao;
 
 import java.util.List;
+
 import java.util.Scanner;
 
 import com.quiz.model.Question;
@@ -12,9 +13,10 @@ import com.quiz.model.Result;
  */
 public class ResultDaoImpl implements IResultDao {
 	IQuizDao quizDao = new QuizDaoImpl();
-	
+
 	/**
 	 * This method does the quiz operation
+	 * 
 	 * @param topic for finding the topic
 	 * @return Result
 	 */
@@ -76,7 +78,8 @@ public class ResultDaoImpl implements IResultDao {
 
 	/**
 	 * This method is used for finding the percentage of the result
-	 * @param  correctAnswers for passing Correct Answers
+	 * 
+	 * @param correctAnswers for passing Correct Answers
 	 * @param totalQuestions for passing Total Questions
 	 * @return integer value of percentage
 	 */
@@ -88,7 +91,8 @@ public class ResultDaoImpl implements IResultDao {
 
 	/**
 	 * This method is used for giving the grades based on percentage
-	 * @param percentage for passing percentage 
+	 * 
+	 * @param percentage for passing percentage
 	 * @return String of grade
 	 */
 	@Override

@@ -1,6 +1,7 @@
 package com.quiz.model;
 
 /**
+ * This Class is java bean of Answer
  * @author PraveenKumarReddy
  *
  */

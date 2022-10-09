@@ -6,6 +6,7 @@ public enum Specialisation {
 	DIABETIC("Diabetician"),
 	CARDIO("Cardiologist"),
 	PHYSICIAN("General Physician");
+	
 	public String type;
 
 	private Specialisation(String type) {

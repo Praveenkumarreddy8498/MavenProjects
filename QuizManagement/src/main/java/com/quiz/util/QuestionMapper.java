@@ -1,6 +1,7 @@
 package com.quiz.util;
 
 import java.sql.SQLException;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.sql.ResultSet;
@@ -9,14 +10,12 @@ import com.quiz.model.Question;
 
 /**
  * @author PraveenKumarReddy
- *
  */
 public class QuestionMapper implements IRowMapper {
 
 	/**
-	 * This method maps the rows of result set
-	 * 
-	 * @param resultset for passing resultset values
+	 * This method maps the rows of resultSet
+	 * @param resultset for passing resultSet values
 	 * @return list of questions
 	 * @throws SQLException for Exception
 	 */

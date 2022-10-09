@@ -44,7 +44,7 @@ public class UserDaoImpl implements IUserDao {
 	 * 
 	 * @param userName for passing user name
 	 * @param password for passing password
-	 * @param role for passing role
+	 * @param role     for passing role
 	 * @return User from Database
 	 */
 	@Override
@@ -86,7 +86,7 @@ public class UserDaoImpl implements IUserDao {
 	 * 
 	 * @param userName for passing user name
 	 * @param password for passing password
-	 * @param role for passing role
+	 * @param role     for passing role
 	 * @return integer from executeUpdate
 	 */
 	@Override

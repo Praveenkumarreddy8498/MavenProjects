@@ -1,6 +1,8 @@
 package com.quiz.model;
 
 /**
+ * This Class is java bean of Question
+ * 
  * @author PraveenKumarReddy
  *
  */
@@ -101,6 +103,5 @@ public class Question {
 				+ optionOne + ", optionTwo=" + optionTwo + ", optionThree=" + optionThree + ", optionFour=" + optionFour
 				+ ", answer=" + answer + "]";
 	}
-	
 
 }

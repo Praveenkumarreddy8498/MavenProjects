@@ -19,8 +19,8 @@ public class DoctorDaoImpl implements IDoctorDao {
 		PreparedStatement preparedstatement = null;
 
 		try {
-			DbConnection.getConnection();
-			connection = DbConnection.getConnection();
+			DbConnection.openConnection();
+			connection = DbConnection.openConnection();
 			preparedstatement = connection.prepareStatement(Queries.INSERT_QUERY);
 			preparedstatement.setString(1, doctor.getDoctorName());
 			preparedstatement.setString(2, doctor.getSpeciality());
@@ -51,8 +51,8 @@ public class DoctorDaoImpl implements IDoctorDao {
 		PreparedStatement preparedstatement = null;
 		boolean result = true;
 		try {
-			DbConnection.getConnection();
-			connection = DbConnection.getConnection();
+			DbConnection.openConnection();
+			connection = DbConnection.openConnection();
 			preparedstatement = connection.prepareStatement(Queries.UPDATE_QUERY);
 			preparedstatement.setDouble(1, fees);
 			preparedstatement.setInt(2, doctorId);
@@ -84,8 +84,8 @@ public class DoctorDaoImpl implements IDoctorDao {
 		Doctor doctor = new Doctor();
 
 		try {
-			DbConnection.getConnection();
-			connection = DbConnection.getConnection();
+			DbConnection.openConnection();
+			connection = DbConnection.openConnection();
 			preparedstatement = connection.prepareStatement(Queries.FINDBYID_QUERY);
 			preparedstatement.setInt(1, doctorId);
 			resultset = preparedstatement.executeQuery();
@@ -97,7 +97,6 @@ public class DoctorDaoImpl implements IDoctorDao {
 				doctor.setExperience(resultset.getInt(5));
 				doctor.setStartTime(resultset.getTimestamp(6).toLocalDateTime());
 				doctor.setEndTime(resultset.getTimestamp(7).toLocalDateTime());
-		
 
 			}
 
@@ -123,8 +122,8 @@ public class DoctorDaoImpl implements IDoctorDao {
 		PreparedStatement preparedstatement = null;
 		boolean result = true;
 		try {
-			DbConnection.getConnection();
-			connection = DbConnection.getConnection();
+			DbConnection.openConnection();
+			connection = DbConnection.openConnection();
 			preparedstatement = connection.prepareStatement(Queries.DELETE_QUERY);
 			preparedstatement.setInt(1, doctorId);
 			int res = preparedstatement.executeUpdate();
@@ -154,8 +153,8 @@ public class DoctorDaoImpl implements IDoctorDao {
 		PreparedStatement preparedstatement = null;
 		ResultSet resultset = null;
 		try {
-			DbConnection.getConnection();
-			connection = DbConnection.getConnection();
+			DbConnection.openConnection();
+			connection = DbConnection.openConnection();
 			preparedstatement = connection.prepareStatement(Queries.FIND_ALL_QUERY);
 			resultset = preparedstatement.executeQuery();
 
@@ -195,8 +194,8 @@ public class DoctorDaoImpl implements IDoctorDao {
 		PreparedStatement preparedstatement = null;
 		ResultSet resultset = null;
 		try {
-			DbConnection.getConnection();
-			connection = DbConnection.getConnection();
+			DbConnection.openConnection();
+			connection = DbConnection.openConnection();
 			preparedstatement = connection.prepareStatement(Queries.SPECIALITY_QUERY);
 			preparedstatement.setString(1, speciality);
 			resultset = preparedstatement.executeQuery();
@@ -236,8 +235,8 @@ public class DoctorDaoImpl implements IDoctorDao {
 		PreparedStatement preparedstatement = null;
 		ResultSet resultset = null;
 		try {
-			DbConnection.getConnection();
-			connection = DbConnection.getConnection();
+			DbConnection.openConnection();
+			connection = DbConnection.openConnection();
 			preparedstatement = connection.prepareStatement(Queries.SPECANDEXP_QUERY);
 			preparedstatement.setString(1, speciality);
 			preparedstatement.setInt(2, experiance);
@@ -278,8 +277,8 @@ public class DoctorDaoImpl implements IDoctorDao {
 		PreparedStatement preparedstatement = null;
 		ResultSet resultset = null;
 		try {
-			DbConnection.getConnection();
-			connection = DbConnection.getConnection();
+			DbConnection.openConnection();
+			connection = DbConnection.openConnection();
 			preparedstatement = connection.prepareStatement(Queries.SPECANDFEE_QUERY);
 			preparedstatement.setString(1, speciality);
 			preparedstatement.setDouble(2, fees);
@@ -320,8 +319,8 @@ public class DoctorDaoImpl implements IDoctorDao {
 		PreparedStatement preparedstatement = null;
 		ResultSet resultset = null;
 		try {
-			DbConnection.getConnection();
-			connection = DbConnection.getConnection();
+			DbConnection.openConnection();
+			connection = DbConnection.openConnection();
 			preparedstatement = connection.prepareStatement(Queries.AVAILABILITY_QUERY);
 			preparedstatement.setTimestamp(1, Timestamp.valueOf(startTime));
 			resultset = preparedstatement.executeQuery();
